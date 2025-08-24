@@ -1,0 +1,7 @@
+@article{li2024efficient,
+  title={Efficient image super-resolution with feature interaction weighted hybrid network},
+  author={Li, Wenjie and Li, Juncheng and Gao, Guangwei and Deng, Weihong and Yang, Jian and Qi, Guo-Jun and Lin, Chia-Wen},
+  journal={IEEE Transactions on Multimedia},
+  year={2024},
+  publisher={IEEE}
+}

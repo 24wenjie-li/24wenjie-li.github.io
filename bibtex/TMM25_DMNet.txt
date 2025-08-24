@@ -1,0 +1,6 @@
+@article{li2025dual,
+  title={Dual-domain modulation network for lightweight image super-resolution},
+  author={Li, Wenjie and Guo, Heng and Hou, Yuefeng and Gao, Guangwei and Ma, Zhanyu},
+  journal={IEEE Transactions on Multimedia},
+  year={2025}
+}

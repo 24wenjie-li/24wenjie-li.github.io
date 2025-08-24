@@ -1,0 +1,7 @@
+@inproceedings{li2024efficient,
+  title={Efficient face super-resolution via wavelet-based feature enhancement network},
+  author={Li, Wenjie and Guo, Heng and Liu, Xuannan and Liang, Kongming and Hu, Jiani and Ma, Zhanyu and Guo, Jun},
+  booktitle={Proceedings of the 32nd ACM International Conference on Multimedia},
+  pages={4515--4523},
+  year={2024}
+}

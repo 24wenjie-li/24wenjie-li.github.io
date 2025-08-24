@@ -1,0 +1,6 @@
+@article{li2023survey,
+  title={Survey on deep face restoration: From non-blind to blind and beyond},
+  author={Li, Wenjie and Wang, Mei and Zhang, Kai and Li, Juncheng and Li, Xiaoming and Zhang, Yuhang and Gao, Guangwei and Deng, Weihong and Lin, Chia-Wen},
+  journal={arXiv preprint arXiv:2309.15490},
+  year={2023}
+}

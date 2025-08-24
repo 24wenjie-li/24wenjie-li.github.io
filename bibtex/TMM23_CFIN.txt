@@ -1,0 +1,9 @@
+@article{li2023cross,
+  title={Cross-receptive focused inference network for lightweight image super-resolution},
+  author={Li, Wenjie and Li, Juncheng and Gao, Guangwei and Deng, Weihong and Zhou, Jiantao and Yang, Jian and Qi, Guo-Jun},
+  journal={IEEE Transactions on Multimedia},
+  volume={26},
+  pages={864--877},
+  year={2023},
+  publisher={IEEE}
+}
