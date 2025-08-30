@@ -1,0 +1,426 @@
+<!--
+  Copyright 2018 The Distill Template Authors
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+       http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<!doctype html>
+
+<style>
+.base-grid,
+.n-header,
+.n-byline,
+.n-title,
+.n-article,
+.n-footer {
+    display: grid;
+    justify-items: stretch;
+    grid-template-columns: [screen-start] 8px [page-start kicker-start text-start gutter-start middle-start] 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr [text-end page-end gutter-end kicker-end middle-end] 8px [screen-end];
+    grid-column-gap: 8px;
+}
+
+.grid {
+  display: grid;
+  grid-column-gap: 8px;
+}
+
+@media(min-width: 768px) {
+    .base-grid,
+    .n-header,
+    .n-byline,
+    .n-title,
+    .n-article,
+    .n-footer {
+        display: grid;
+        justify-items: stretch;
+        grid-template-columns: [screen-start] 1fr [page-start kicker-start middle-start text-start] 45px 45px 45px 45px 45px 45px 45px 45px [ kicker-end text-end gutter-start] 45px [middle-end] 45px [page-end gutter-end] 1fr [screen-end];
+        grid-column-gap: 16px;
+    }
+
+    .grid {
+        grid-column-gap: 16px;
+    }
+}
+
+@media(min-width: 1000px) {
+    .base-grid,
+    .n-header,
+    .n-byline,
+    .n-title,
+    .n-article,
+    .n-footer {
+        display: grid;
+        justify-items: stretch;
+        grid-template-columns: [screen-start] 1fr [page-start kicker-start] 50px [middle-start] 50px [text-start kicker-end] 50px 50px 50px 50px 50px 50px 50px 50px [text-end gutter-start] 50px [middle-end] 50px [page-end gutter-end] 1fr [screen-end];
+        grid-column-gap: 16px;
+    }
+
+    .grid {
+        grid-column-gap: 16px;
+    }
+}
+
+@media (min-width: 1180px) {
+    .base-grid,
+    .n-header,
+    .n-byline,
+    .n-title,
+    .n-article,
+    .n-footer {
+        display: grid;
+        justify-items: stretch;
+        grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+        grid-column-gap: 32px;
+    }
+    .grid {
+        grid-column-gap: 32px;
+    }
+
+}
+
+.base-grid {
+  grid-column: screen;
+}
+
+/* default grid column assignments */
+.n-title > *  {
+  grid-column: text;
+}
+
+.n-article > *  {
+  grid-column: text;
+}
+
+.n-title {
+    padding: 4rem 0 0.5rem;
+}
+
+.l-page {
+    grid-column: page;
+}
+
+.l-article {
+    grid-column: text;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+
+.pixelated {
+    image-rendering: pixelated;
+}
+
+strong {
+    font-weight: 600;
+}
+
+/*------------------------------------------------------------------*/
+/* title */
+.n-title h1 {
+    font-family: "Barlow",system-ui,Arial,sans-serif;
+/*    color:#082333;*/
+    color: rgb(250,250,250);
+    grid-column: text;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+    text-align: center;
+}
+
+.n-title h2 {
+    color: rgb(250,250,250);
+    font-weight: 550;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .n-title h1 {
+        font-size: 35px;
+    }
+}
+
+
+.n-byline {
+  contain: style;
+  overflow: hidden;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 0.8rem;
+  line-height: 1.8em;
+  padding: 1.5rem 0;
+  min-height: 1.8em;
+}
+
+.n-byline .byline {
+  grid-column: text;
+}
+
+.byline {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.grid {
+    display: grid;
+    grid-column-gap: 8px;
+}
+
+@media (min-width: 768px) {
+.grid {
+    grid-column-gap: 16px;
+}
+}
+
+.n-byline p {
+  margin: 0;
+}
+
+.n-byline h3 {
+    font-size: 0.6rem;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+    margin: 0;
+    text-transform: uppercase;
+}
+.n-byline .authors-affiliations {
+  grid-column-end: span 2;
+  grid-template-columns: 1fr 1fr;
+}
+
+ul.authors {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+ul.authors li {
+    padding: 0 0.5rem;
+    display: inline-block;
+}
+
+ul.authors sup {
+    color: rgb(206,206,206);
+}
+
+ul.authors.affiliations  {
+    margin-top: 0.5rem;
+}
+
+ul.authors.affiliations > li > a{
+    color: rgb(186,186,206, 0.8);
+    text-decoration:none; 
+}
+
+.authors.bottom > li > a {
+    text-decoration:none;
+    color: inherit;
+    color: rgb(255,255,255);
+    font-size: 14px;
+}
+
+.authors.bottom > li > a:hover {
+    text-decoration:none;
+    color: inherit;
+    color: rgb(255,255,255);
+/*    text-decoration:underline;*/
+    transition: 0.s;
+
+    padding-bottom: 0px;
+    border-bottom: 0px solid #fff;
+}
+
+ul.authors.affiliations > li > a:hover {
+    text-decoration:none; 
+    color: rgb(206,206,226, 1);
+    padding-bottom: 0px;
+    border-bottom: 0px solid #fff;
+}
+
+.n-title, .n-byline{
+  background:  #004050;
+  color: rgb(210,210,210);
+  font-family: Quando;
+  font-weight: 300;
+  width: 100%;
+}
+
+p > a, .authors > li > a {
+    text-decoration:none;
+    color: inherit;
+    color: rgb(200,200,200);
+}
+
+p > a:hover, .authors > li > a:hover {
+    text-decoration:none;
+    color: inherit;
+    color: rgb(255,255,255);
+/*    text-decoration:underline;*/
+    transition: 0.2s;
+
+    padding-bottom: 1px;
+    border-bottom: 1px solid #fff;
+}
+
+div.overlines {
+    border-top: 1px solid rgba(0, 0, 0, 0.1); 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+
+</style>
+<head>
+    <title>WFEN</title>
+    <script src="template.v2.js"></script>
+    <meta property="og:title" content="Image Restoration with Mean-Reverting Stochastic Differential Equations">
+    <meta property="og:type" content="website">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="icon" href="./images/favicon.png"> -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+      }
+    });
+    </script>
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <meta charset="utf8">
+</head>
+
+<body>
+  <div class="n-title">
+   <h1>
+    Efficient Face Super-Resolution via Wavelet-based Feature Enhancement Network
+   </h1>
+   <!-- <h2 style="text-align: center">
+    &mdash; IR-SDE &mdash;
+   </h2> -->
+   <h3 style="text-align: center"> ACM Multimedia (ACM MM), 2024 </h3>
+   <p style="text-align: center"> [<a href = "https://arxiv.org/abs/2407.19768"><b>Paper</b></a>]  [<a href = "https://github.com/PRIS-CV/WFEN"><b>Code</b></a>] </p>
+  </div>
+  <div class="n-byline">
+   <div class="byline">
+    <ul class="authors">
+     <li>
+      <a href = "https://24wenjie-li.github.io/">Wenjie Li</a>
+     </li>
+     <li>
+      <a href = "https://gh-home.github.io/">Heng Guo</a>
+     </li>
+     <li>
+      <a href = "">Xuannan Liu</a>
+     </li>
+     <li>
+      <a href = "https://griffinliang.github.io/">Kongming Liang</a>
+     </li>
+     <li>
+      <a href = "">Jiani Hu</a>
+     </li>
+     <li>
+        <a href = "https://zhanyuma.cn/">Zhanyu Ma</a>
+     </li>
+     <li>
+        <a href = "https://scholar.google.com.hk/citations?hl=zh-CN&user=bZOvn6QAAAAJ">Jun Guo</a>
+     </li>
+    </ul>
+    <ul class="authors affiliations">
+     <li>
+      <a href = "https://github.com/PRIS-CV">PRIS-CV Lab, Beijing University of Posts and Telecommunications</a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <d-article>
+    <h3 style="text-align: center;" >Summary</h3>
+    <p style="text-align: justify;">
+        Face super-resolution aims to reconstruct a high-resolution face image from a low-resolution face image. Previous methods typically employ an encoder-decoder structure to extract facial structural features, where the direct downsampling inevitably introduces distortions, especially to high-frequency features such as edges. To address this issue, we propose a wavelet-based feature enhancement network, which mitigates feature distortion by losslessly decomposing the input feature into high and low-frequency components using the wavelet transform and processing them separately. To improve the efficiency of facial feature extraction, a full domain Transformer is further proposed to enhance local, regional, and global facial features. Such designs allow our method to perform better without stacking many modules as previous methods did. Experiments show that our method effectively balances performance, model size, and speed. 
+    </p>
+
+    <figure  style="grid-column: text">
+        <img src="images/overview.png" style="width: 100%;display: block; margin-left: auto; margin-right: auto;"/>
+        <figcaption >  <b>Overview of our method, where the cascaded of WFD and WFU constitute the wavelet-based encoder-decoder.  </figcaption>
+        <!-- <img src="images/FDT.png" style="width: 100%; margin-top: 1rem;display: block; margin-left: auto; margin-right: auto;"/>
+            <figcaption >  <b>IR-SDE works well on various problems, <em style="color: #e67300;">the only change required for each task is to replace the dataset!</em> </b></figcaption> -->
+    </figure>
+
+    <h4>Visual Results</h4>
+    <figure  style="grid-column: text">
+        <img src="images/visual.png" style="width: 100%;display: block; margin-left: auto; margin-right: auto;"/>
+        <!-- <figcaption >  <b>Visual results on CelebA-Test and Helen test sets.  </figcaption> -->
+        <!-- <img src="images/FDT.png" style="width: 100%; margin-top: 1rem;display: block; margin-left: auto; margin-right: auto;"/>
+            <figcaption >  <b>IR-SDE works well on various problems, <em style="color: #e67300;">the only change required for each task is to replace the dataset!</em> </b></figcaption> -->
+    </figure>
+
+<!-- 
+    <h4>Image denoising</h4>
+    <div style="text-align: center;">
+        <video controls loop width="768" height="432" style="width: 100%;display: block; margin-left: auto; margin-right: auto;">
+        <source src="images/denoising.mp4" type="video/mp4">
+        </video>
+        <figcaption style="display:flex; justify-content: center"> <b>Image Denoising</b>  </figcaption>
+    </div> -->
+
+      
+
+    <h3>Citation</h3>
+    
+    <code>
+      @inproceedings{li2024efficient,
+      <div style="padding-left: 5%; margin: 0">
+        title={Efficient face super-resolution via wavelet-based feature enhancement network},<br/>
+        author={Wenjie Li, Heng Guo, Xuannan Liu, Kongming Liang, Jiani Hu, Zhanyu Ma, Jun Guo,<br/>
+        booktitle={Proceedings of the 32nd ACM International Conference on Multimedia},<br/>
+        pages={4515--4523},<br/>
+        year={2024}<br/>
+      </div>
+      }<br/>
+    </code>
+<span style="margin-bottom: 10%"></span>
+</d-article>
+
+<div class="n-byline">
+   <div class="byline">
+    <ul class="authors bottom">
+     <li>
+      <a>Wenjie Li</a>
+     </li>
+     <li>
+      <a>Heng Guo</a>
+     </li>
+     <li>
+      <a>Xuannan Liu</a>
+     </li>
+     <li>
+      <a>Kongming Liang</a>
+     </li>
+     <li>
+      <a>Jiani Hu</a>
+     </li>
+     <li>
+      <a>Zhanyu Ma</a>
+     </li>
+     <li>
+      <a>Jun Guo</a>
+     </li>
+     <li>
+        &bull; &emsp; <a>2024</a>
+     </li>
+    </ul>
+   </div>
+  </div>
+
+</body>
