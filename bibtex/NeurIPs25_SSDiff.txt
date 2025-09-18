@@ -1,0 +1,6 @@
+@inproceedings{li2025self,
+  title={Self-Supervised Selective-Guided Diffusion Model for Old-Photo Face Restoration},
+  author={Li, Wenjie and Wang, Xiangyi and Guo, Heng and Gao, GuangWei and Ma, Zhanyu},
+  booktitle={NeurIPs},
+  year={2025}
+}
