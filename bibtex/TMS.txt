@@ -1,0 +1,6 @@
+@inproceedings{li2025measurement,
+  title={Measurement-Constrained Sampling for Text-Prompted Blind Face Restoration},
+  author={Li, Wenjie and Zhang, Yulun and Gao, Guangwei and Guo, Heng and Ma, Zhanyu},
+  journal={arXiv preprint arXiv:2511.12419},
+  year={2025}
+}
