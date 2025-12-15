@@ -1,6 +1,6 @@
-@article{li2025fouriersr,
+@article{li2026fouriersr,
   title={FourierSR: A Fourier Token-based Plugin for Efficient Image Super-Resolution},
   author={Li, Wenjie and Guo, Heng and Hou, Yuefeng and Ma, Zhanyu},
-  journal={arXiv preprint arXiv:2503.10043},
-  year={2025}
+  journal={IEEE Transactions on Image Processing},
+  year={2026}
 }
