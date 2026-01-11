@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description"
+          content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Seeing Through the Rain: Resolving High-Frequency Conflicts in Deraining and Super-Resolution via Diffusion Guidance</title>
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSQ09ZTB5R"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+  
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+  
+      gtag('js', new Date());
+  
+      gtag('config', 'G-YSQ09ZTB5R');
+    </script>
+  
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+  
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+    <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
+    <style>
+    .video-slider {
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+  
+    .slide {
+      flex: 0 0 100%;
+      min-width: 100%;
+      transition: transform 0.5s ease;
+    }
+  
+    .button {
+      margin-top: 1rem;
+    }
+  
+  .video {
+    width: 100%;
+    }
+  
+    .caption {
+      background-color: rgb(255, 255, 255);
+      color: #000;
+      font-size: 1rem;
+      margin-top: 0rem;
+      padding: 0.1rem;
+      text-align: center;
+      width: 100%;
+    }
+      .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+      }
+      .render_wrapper {
+        position: relative;
+        height: 300px;
+      }
+      .render_wrapper_small {
+        position: relative;
+        height: 250px;
+      }
+      .render_div {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+  
+      .nested-columns {
+        margin-bottom: 0 !important;
+      }
+  </style>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script defer src="./static/js/fontawesome.all.min.js"></script>
+      <script src="./static/js/bulma-carousel.min.js"></script>
+      <script src="./static/js/bulma-slider.min.js"></script>
+      <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
+      <script src="./static/js/index.js"></script>
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+      </script>
+      <script
+        type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+      ></script>
+  </head>
+  <body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">Seeing Through the Rain: Resolving High-Frequency Conflicts in Deraining and Super-Resolution via Diffusion Guidance</h1>
+          <h1 class="title is-3 publication-title"><a href="https://aaai.org/conference/aaai/aaai-26/">AAAI 2026 </a></h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://24wenjie-li.github.io/">Wenjie Li</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?user=9tYW9LcAAAAJ&hl=zh-CN&oi=ao">Jinglei Shi</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://hjynwa.github.io/">Jin Han</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://gh-home.github.io/">Heng Guo</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://zhanyuma.cn/">Zhanyu Ma</a><sup>1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>1</sup>Beijing University of Posts and Telecommunications</span><br
+            <span class="author-block"><sup>2</sup>NanKai University</span>
+            <span class="author-block"><sup>3</sup>Tokyo University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2511.12419"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Arxiv</span>
+                </a>
+              </span>
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/PRIS-CV/DHGM"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Supplementary</span>
+                  </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Abstract. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          Clean images are crucial for visual tasks such as small object detection, especially at high resolutions. 
+          However, real-world images are often degraded by adverse weather, and weather restoration methods may 
+          sacrifice high-frequency details critical for analyzing small objects. A natural solution is to apply 
+          super-resolution (SR) after weather removal to recover both clarity and fine structures. 
+          However, simply cascading restoration and SR struggle to bridge their inherent conflict: 
+          removal aims to remove high-frequency weather-induced noise, while SR aims to hallucinate 
+          high-frequency textures from existing details, leading to inconsistent restoration contents. 
+          </p>
+          <p>
+           In this paper, we take deraining as a case study and propose <span class=""><b>DHGM</b></span>, a <span class="underline"><b>D</b></span>iffusion-based 
+           <span class="underline"><b>H</b></span>igh-frequency <span class="underline"><b>G</b></span>uided <span class="underline"><b>M</b></span>odel for generating clean and high-resolution images. DHGM 
+           integrates pre-trained diffusion priors with high-pass filters to simultaneously remove 
+           rain artifacts and enhance structural details. Extensive experiments demonstrate that 
+           DHGM achieves superior performance over existing methods, with lower costs.
+          </p>
+
+        </div>
+      </div>
+    </div>
+</section>
+<!-- overview -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Overview of Our Method</h2>
+    <img src="static/images/overview.png" class="center">
+    <div class="content has-text-justified">
+      <p>
+      <span class=""><b>Overview:</b></span> Our method utilizes our Media Remover (MR) and Texture Compensator (TC) to guide learned diffusion priors in latent spaces to complete high-frequency rain-induced media removal and high-frequency texture reconstruction.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- Quantitative Results -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Quantitative Results</h2>
+    <img src="static/images/Quantitative.png" class="center">
+    <div class="content has-text-justified">
+      <p>
+        <span class=""><b>Quantitative:</b></span> The sequential utilization of existing deraining methods and super-resolution methods 
+        or fine-tuned deraining methods makes it difficult to accurately recover buildings, vehicles, 
+        and pedestrians (<span class=""><b>top</b></span>), hindering downstream tasks like depth map estimation and image 
+        segmentation (<span class=""><b>bottom</b></span>).
+      </p>
+    </div>
+  </div>
+</section>
+<!-- Qualitative comparison -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
+    <img src="static/images/Qualitative.png" class="center">
+    <div class="content has-text-justified">
+      <p>
+        <span class=""><b>Qualitative:</b></span> Results of ours with sequentially performed deraining and SR methods, fine-tuned single deraining, all-in-one weather restoration, SR, and general restoration methods on deraining, deraining & raindrop removal, and raindrop removal test sets at scale of x2.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- bittex -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title has-text-centered">BibTeX</h2>
+    <pre><code>@inproceedings{li2026seeing,
+      title={Seeing Through the Rain: Resolving High-Frequency Conflicts in Deraining and Super-Resolution via Diffusion Guidance},
+      author={Li, Wenjie and Shi, Jinglei and Han, Jin and Guo, Heng and Ma, Zhanyu},
+      booktitle={AAAI},
+      year={2026}
+    }</code>
+    </pre>
+  </div>
+</section>
+
+
+<script>
+  const tabContainers = document.querySelectorAll(".tabs[data-slide]");
+
+  tabContainers.forEach((tabContainer) => {
+    const slideIndex = parseInt(tabContainer.dataset.slide);
+    const videoSlider = document.querySelector(
+      `.video-slider[data-slide="${slideIndex}"]`
+    );
+    const slides = videoSlider.querySelectorAll(".slide");
+    const tabs = tabContainer.querySelectorAll("li");
+
+    function switchVideo(index) {
+      const transformValue = `translateX(-${index * 100}%)`;
+      slides.forEach((slide) => {
+        slide.style.transform = transformValue;
+      });
+    }
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const index = parseInt(tab.dataset.index);
+        switchVideo(index);
+
+        // Remove the "is-active" class from all tabs within the current tabContainer
+        tabs.forEach((t) => t.classList.remove("is-active"));
+        tab.classList.add("is-active");
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
