@@ -1,6 +1,9 @@
 @inproceedings{li2026seeing,
-  title={Seeing Through the Rain: Resolving High-Frequency Conflicts in Deraining and Super-Resolution via Diffusion Guidance},
+  title={Seeing through the rain: Resolving high-frequency conflicts in deraining and super-resolution via diffusion guidance},
   author={Li, Wenjie and Shi, Jinglei and Han, Jin and Guo, Heng and Ma, Zhanyu},
-  booktitle={AAAI},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={40},
+  number={8},
+  pages={6468--6476},
   year={2026}
 }
